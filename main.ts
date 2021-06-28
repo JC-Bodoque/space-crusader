@@ -1,0 +1,5 @@
+scene.setBackgroundImage(assets.image`bg`)
+effects.starField.startScreenEffect()
+let mySprite = sprites.create(assets.image`player`, SpriteKind.Player)
+mySprite.setStayInScreen(true)
+controller.moveSprite(mySprite, 100, 100)
