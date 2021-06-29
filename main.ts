@@ -4,13 +4,13 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(assets.image`shoot`, thePlayer, 0, -50)
 })
+statusbars.onZero(StatusBarKind.EnemyHealth, function (status) {
+    status.spriteAttachedTo().destroy(effects.disintegrate, 500)
+})
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.destroy()
     info.changeScoreBy(1)
-    statusbars.getStatusBarAttachedTo(StatusBarKind.EnemyHealth, otherSprite).value += -5
-    if (statusbar.value == 0) {
-        otherSprite.destroy(effects.disintegrate, 500)
-    }
+    statusbars.getStatusBarAttachedTo(StatusBarKind.EnemyHealth, otherSprite).value += -25
 })
 function setEnviromentMusic () {
     while (true) {
@@ -25,8 +25,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
         thePlayer.destroy(effects.disintegrate, 500)
     }
 })
-let theEnemy: Sprite = null
 let statusbar: StatusBarSprite = null
+let theEnemy: Sprite = null
 let projectile: Sprite = null
 let thePlayer: Sprite = null
 let asteroid = null
@@ -44,6 +44,7 @@ game.onUpdateInterval(500, function () {
     theEnemy.x = randint(10, scene.screenWidth() - 10)
     theEnemy.y = 0
     theEnemy.setVelocity(0, 50)
-    statusbar = statusbars.create(20, 4, StatusBarKind.EnemyHealth)
+    statusbar = statusbars.create(16, 2, StatusBarKind.EnemyHealth)
     statusbar.attachToSprite(theEnemy)
+    statusbar.max = 50
 })
