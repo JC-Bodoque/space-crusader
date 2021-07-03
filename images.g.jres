@@ -24,6 +24,16 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "asteroid_sprite_0"
     },
+    "|P4AC$z[%%J`Ql#epqg-": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAVVVVVQAAAFVVVVVVBQBQVVVVVVVVAFBVVVVVVVUAUIWIiIiIVQBQhYiIiIhVAFCFWIVYVVUAUIVYhVhVVQBQhYiIVVVVAFBViFhVVVUAUFVVVVVVVQBQVVVVVVVVAABVVVVVVQUAAABVVVVVAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "power_up_sprite"
+    },
+    "wPesr9JM5Dbf+]5*|/d#": {
+        "data": "hwQQABAAAAAAAICICAAAAAAAmJmJiAgAAACYmZmZiIgAAICICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICICAAAAAAAmJmZmYiIAACYmYmICAAAAICICAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "double_shoot_sprite"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
