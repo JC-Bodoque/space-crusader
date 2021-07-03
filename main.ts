@@ -10,6 +10,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         projectile = sprites.createProjectileFromSprite(assets.image`double_shoot_sprite`, thePlayer, 0, -50)
     }
 })
+function enviromentMusic () {
+	
+}
 statusbars.onZero(StatusBarKind.EnemyHealth, function (status) {
     enemyDeath(status.spriteAttachedTo())
 })
@@ -32,11 +35,6 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
     info.changeScoreBy(1)
     statusbars.getStatusBarAttachedTo(StatusBarKind.EnemyHealth, otherSprite).value += -1
 })
-function setEnviromentMusic () {
-    while (true) {
-        music.playMelody("E B C5 A B G A F ", 90)
-    }
-}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     otherSprite.destroy(effects.disintegrate, 500)
@@ -59,6 +57,7 @@ info.setLife(5)
 info.setScore(0)
 let enemySpeed = 50
 let enemySpawnTime = 500
+music.playMelody("E B C5 A B G A F ", 90)
 game.onUpdateInterval(5000, function () {
     enemySpeed += 10
     enemySpeed = Math.min(enemySpeed, 100)
